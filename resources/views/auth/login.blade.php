@@ -11,7 +11,7 @@
             <p class="text-center text-muted mb-5">your articles are waiting for you</p>
             <form method="POST" action ="{{ route('login')}}">
                 @csrf 
-
+               {{--On inclus le message d'alertes--}}
                 @include('alerts.alert-message')
 
                 @error('email')
@@ -25,10 +25,10 @@
                 </div>
                 @enderror
 
-                <label for="email">Email</label>
+                <label for="email" class="form-label">Email</label>
                 <input type="email" name="email" id="email" class="form-control mb-3 @error('email') is-invalid @enderror" value="{{old ('email')}}" required autocomplete="email" autofocus>
 
-                <label for="password">Password</label>
+                <label for="password" class="form-label">Password</label>
                 <input type="password" name="password" id="password" class="form-control mb-3 @error('password') is-invalid @enderror" value="{{old ('password')}}" required autocomplete="current-password" autofocus>
 
                 <div class="row mb-3">
@@ -39,7 +39,7 @@
                 </div> 
              </div>
                 <div class="col-md-6 text-end">
-                    <a href="#">forgot password ?</a>
+                    <a href="{{ route('app_forgotpassword') }}">forgot password ?</a>
                 </div>
             </div>
 

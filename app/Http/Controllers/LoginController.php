@@ -10,8 +10,6 @@ use Illuminate\Support\Facades\Auth;
 use View;
 
 
-
-
 class LoginController extends Controller
 {
   protected $request;
@@ -190,8 +188,11 @@ public function ActivationAccountChangeEmail($token)
             'token' => $token
     ]);
     } 
- 
   } 
+  public function forgotPassword()
+  {
+    return view('auth.forgot_password');
+  }   
 } 
 
 
